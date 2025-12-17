@@ -1,7 +1,7 @@
-import { Project, SkillCategory, SocialLink } from './types';
+import { Project, SkillCategory, Education, SocialLink } from './types';
 
 export const PORTFOLIO_OWNER = "Eduardo Solano";
-export const JOB_TITLE = "Machine Learning Engineer";
+export const JOB_TITLE = "Software Engineer";
 export const SHORT_BIO = "I build accessible, pixel-perfect, and performant web experiences.";
 export const LONG_BIO = `I am a motivated and detail-oriented developer who enjoys solving problems and bringing ideas to life through technology. My interests lie in both frontend and backend development, where I can combine creativity with logic to build meaningful applications.
 
@@ -11,44 +11,84 @@ Looking ahead, I aim to grow as a professional by embracing challenges, improvin
 
 export const SKILLS: SkillCategory[] = [
   {
-    category: "Frontend",
-    skills: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Redux", "Framer Motion"],
+    category: "Technical Skills",
+    skills: [
+      { name: "HTML", level: 95 },
+      { name: "CSS", level: 90 },
+      { name: "Bootstrap", level: 85 },
+      { name: "JavaScript", level: 90 },
+      { name: "Java", level: 80 },
+      { name: "Python", level: 85 },
+      { name: "MySQL", level: 80 },
+      { name: "PHP", level: 75 },
+      { name: "Spring MVC", level: 70 },
+      { name: "Axure", level: 65 },
+      { name: "Microsoft Copilot", level: 85 },
+      { name: "NumPy", level: 75 },
+      { name: "Pandas", level: 75 },
+      { name: "Scikit Learn", level: 70 },
+      { name: "TensorFlow", level: 65 },
+      { name: "PyTorch", level: 60 },
+      { name: "Keras", level: 60 },
+      { name: "XGBoost", level: 60 }
+    ],
   },
   {
-    category: "Backend",
-    skills: ["Node.js", "Express", "PostgreSQL", "GraphQL", "Redis", "Docker"],
+    category: "Soft Skills",
+    skills: [
+      "Communication", "Teamwork", "Problem Solving", "Adaptability", 
+      "Time Management", "Creativity", "Critical Thinking"
+    ],
+  },
+];
+
+export const EDUCATION: Education[] = [
+  {
+    school: "University of Cebu - Banilad Campus",
+    degree: "Bachelor of Science in Information Technology",
+    year: "2024 - Present"
   },
   {
-    category: "AI & Tools",
-    skills: ["Gemini API", "Python", "Git", "AWS", "CI/CD", "Figma"],
-  },
+    school: "Lithan Academy Singapore",
+    degree: "Applied Degree in Software Engineering",
+    year: "2024 - Present"
+  }
 ];
 
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Dashboard",
-    description: "A comprehensive analytics dashboard for online retailers featuring real-time data visualization.",
-    tags: ["React", "D3.js", "Node.js"],
-    imageUrl: "https://picsum.photos/600/400?random=1",
-    demoUrl: "#",
-    repoUrl: "#",
+    title: "Dobu Martial Arts",
+    description: "A modern website for a martial arts academym, focused on showcasing training programs, instructors and membership details in a clean and professional layout. Built with HTML, CSS and JavaScript to ensure responsiveness and interactivity and usability.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    imageUrl: "/img/Dobu.png",
+    demoUrl: "https://d34th-se.github.io/DobuMartialArts/",
+    repoUrl: "https://github.com/D34TH-SE/DobuMartialArts",
   },
   {
     id: 2,
-    title: "AI Content Generator",
-    description: "A SaaS platform allowing users to generate marketing copy using LLMs.",
-    tags: ["TypeScript", "Gemini API", "Next.js"],
-    imageUrl: "https://picsum.photos/600/400?random=2",
+    title: "Enomy Finance",
+    description: "A finance management system that allows user to track expenses, set budgets and manage accounts securely.It also provides currency conversion via API, Investment planning tools and calculators for estimating returns. Developes using Java, Spring MVC and MySQL.",
+    tags: ["HTML", "CSS", "JavaScript", "Java", "Spring MVC", "MySQL"],
+    imageUrl: "/img/Enomy.png",
     demoUrl: "#",
     repoUrl: "#",
   },
   {
     id: 3,
-    title: "Task Management App",
-    description: "Collaborative task manager with drag-and-drop functionality and team chat.",
-    tags: ["React", "Firebase", "Tailwind"],
-    imageUrl: "https://picsum.photos/600/400?random=3",
+    title: "Jumpstart",
+    description: "An e-commerce fashion retail platform built in Jumpstart, featuring a responsive shopping experience, brand identity design and an intergrated AI-powered chatbot using Gemini API for customer support.Technologies used include Gemini API, HTML, CSS and JavaScript.",
+    tags: ["HTML", "CSS", "JavaScript", "Gemini API"],
+    imageUrl: "/img/Jumpstart.png",
+    demoUrl: "#",
+    repoUrl: "#",
+  },
+  {
+    id: 4,
+    title: "Meals on Wheels",
+    description: "A food delivery platform that simplifies the ordering process with real-time delivery tracking and a user-friendly interface. Built using TypesScript, JavaScript, PHP, CSS ans React for dynamic and scalable solution.",
+    tags: ["HTML", "CSS", "JavaScript", "TypeScript", "PHP", "React JS"],
+    imageUrl: "/img/MealsOnWheels.png",
     demoUrl: "#",
     repoUrl: "#",
   },
@@ -62,6 +102,7 @@ export const SYSTEM_INSTRUCTION = `
   Title: ${JOB_TITLE}
   Bio: ${LONG_BIO}
   Skills: ${JSON.stringify(SKILLS)}
+  Education: ${JSON.stringify(EDUCATION)}
   Projects: ${JSON.stringify(PROJECTS.map(p => p.title + ": " + p.description))}
   
   Be professional, concise, and friendly. 

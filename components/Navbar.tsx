@@ -5,6 +5,7 @@ import { SectionId } from '../types';
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>(SectionId.HOME);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,11 +15,36 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Track active section on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // When a section enters the center of the viewport
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { 
+        // Trigger when the section crosses the middle of the screen
+        rootMargin: '-40% 0px -40% 0px',
+        threshold: 0 
+      }
+    );
+
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
+      setActiveSection(id); 
     }
   };
 
@@ -54,9 +80,17 @@ export const Navbar: React.FC = () => {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors uppercase tracking-wider"
+              className={`relative text-sm font-medium transition-colors uppercase tracking-wider py-1
+                ${activeSection === link.id ? 'text-indigo-400' : 'text-slate-300 hover:text-indigo-300'}
+              `}
             >
               {link.name}
+              {/* Active Indicator Underline */}
+              <span 
+                className={`absolute bottom-0 left-0 w-full h-0.5 bg-indigo-500 rounded-full transition-transform duration-300 origin-left ${
+                  activeSection === link.id ? 'scale-x-100' : 'scale-x-0'
+                }`}
+              ></span>
             </button>
           ))}
           <a
@@ -85,7 +119,11 @@ export const Navbar: React.FC = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-left text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700 px-4 py-2 rounded-lg transition-colors"
+                className={`text-left text-base font-medium px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === link.id 
+                    ? 'text-white bg-indigo-600/20 border border-indigo-500/30' 
+                    : 'text-slate-300 hover:text-white hover:bg-slate-700'
+                }`}
               >
                 {link.name}
               </button>

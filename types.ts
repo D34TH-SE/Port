@@ -8,9 +8,20 @@ export interface Project {
   repoUrl?: string;
 }
 
+export interface SkillDetail {
+  name: string;
+  level: number;
+}
+
 export interface SkillCategory {
   category: string;
-  skills: string[];
+  skills: (string | SkillDetail)[];
+}
+
+export interface Education {
+  school: string;
+  degree: string;
+  year?: string;
 }
 
 export interface SocialLink {

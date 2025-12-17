@@ -27,7 +27,7 @@ export const About: React.FC = () => {
           </div>
         </RevealOnScroll>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid grid-cols-1 2xl:grid-cols-2 gap-12 items-stretch">
           
           {/* Block 1: Personal Info & Image */}
           <RevealOnScroll delay={200} className="h-full">
