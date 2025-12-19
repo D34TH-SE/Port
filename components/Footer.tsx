@@ -8,9 +8,6 @@ export const Footer: React.FC = () => {
         <p className="text-slate-500 text-sm">
           &copy; {new Date().getFullYear()} {PORTFOLIO_OWNER}. All rights reserved.
         </p>
-        <p className="text-slate-600 text-xs mt-2">
-          Built with React and Tailwind CSS.
-        </p>
       </div>
     </footer>
   );

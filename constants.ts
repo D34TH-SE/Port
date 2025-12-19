@@ -1,13 +1,23 @@
+
 import { Project, SkillCategory, Education, SocialLink } from './types';
 
 export const PORTFOLIO_OWNER = "Eduardo Solano";
-export const JOB_TITLE = "Software Engineer";
-export const SHORT_BIO = "I build accessible, pixel-perfect, and performant web experiences.";
+export const JOB_TITLE = "Aspiring Machine Learning Engineer";
+export const SHORT_BIO = "Passionate developer eager to contribute to innovative projects and grow within a professional development team";
 export const LONG_BIO = `I am a motivated and detail-oriented developer who enjoys solving problems and bringing ideas to life through technology. My interests lie in both frontend and backend development, where I can combine creativity with logic to build meaningful applications.
 
 My journey in technology began with a curiosity for how digital systems work, which gradually evolved into a commitment to pursue software engineering. Over time, I have gained experience in designing websites, coding applications, and learning the principles of modern development.
 
 Looking ahead, I aim to grow as a professional by embracing challenges, improving my technical skills, and contributing solutions that make a real difference for users and businesses alike.`;
+
+// Added SYSTEM_INSTRUCTION for Gemini Chat Assistant
+export const SYSTEM_INSTRUCTION = `You are a helpful and professional AI assistant for Eduardo Solano's professional portfolio. 
+Eduardo is a Software Engineer who specializes in building accessible, pixel-perfect, and performant web experiences.
+He is currently studying Bachelor of Science in Information Technology at University of Cebu - Banilad Campus and an Applied Degree in Software Engineering at Lithan Academy Singapore.
+His technical skills include HTML, CSS, JavaScript, Java, Python, MySQL, PHP, and various machine learning frameworks like TensorFlow and PyTorch.
+He has worked on projects like Dobu Martial Arts, Enomy Finance, Jumpstart, and Meals on Wheels.
+Answer questions about his skills, education, and projects based on the information provided in this portfolio. 
+Be concise, friendly, and helpful. If you don't know something, suggest the user contact Eduardo directly via the contact form.`;
 
 export const SKILLS: SkillCategory[] = [
   {
@@ -59,7 +69,7 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Dobu Martial Arts",
-    description: "A modern website for a martial arts academym, focused on showcasing training programs, instructors and membership details in a clean and professional layout. Built with HTML, CSS and JavaScript to ensure responsiveness and interactivity and usability.",
+    description: "A modern website for a martial arts academy, focused on showcasing training programs, instructors and membership details in a clean and professional layout. Built with HTML, CSS and JavaScript to ensure responsiveness and interactivity and usability.",
     tags: ["HTML", "CSS", "JavaScript"],
     imageUrl: "/img/Dobu.png",
     demoUrl: "https://d34th-se.github.io/DobuMartialArts/",
@@ -68,44 +78,28 @@ export const PROJECTS: Project[] = [
   {
     id: 2,
     title: "Enomy Finance",
-    description: "A finance management system that allows user to track expenses, set budgets and manage accounts securely.It also provides currency conversion via API, Investment planning tools and calculators for estimating returns. Developes using Java, Spring MVC and MySQL.",
+    description: "A finance management system that allows user to track expenses, set budgets and manage accounts securely. It also provides currency conversion via API, Investment planning tools and calculators for estimating returns. Developed using Java, Spring MVC and MySQL.",
     tags: ["HTML", "CSS", "JavaScript", "Java", "Spring MVC", "MySQL"],
     imageUrl: "/img/Enomy.png",
-    demoUrl: "#",
-    repoUrl: "#",
+    demoUrl: "https://github.com/D34TH-SE/Enomy",
+    repoUrl: "https://github.com/D34TH-SE/Enomy",
   },
   {
     id: 3,
     title: "Jumpstart",
-    description: "An e-commerce fashion retail platform built in Jumpstart, featuring a responsive shopping experience, brand identity design and an intergrated AI-powered chatbot using Gemini API for customer support.Technologies used include Gemini API, HTML, CSS and JavaScript.",
-    tags: ["HTML", "CSS", "JavaScript", "Gemini API"],
+    description: "An e-commerce fashion retail platform built in Jumpstart, featuring a responsive shopping experience, brand identity design and an integrated AI-powered chatbot for customer support. Technologies used include HTML, CSS and JavaScript.",
+    tags: ["HTML", "CSS", "JavaScript"],
     imageUrl: "/img/Jumpstart.png",
-    demoUrl: "#",
-    repoUrl: "#",
+    demoUrl: "https://github.com/D34TH-SE/CPL-Project",
+    repoUrl: "https://github.com/D34TH-SE/CPL-Project",
   },
   {
     id: 4,
     title: "Meals on Wheels",
-    description: "A food delivery platform that simplifies the ordering process with real-time delivery tracking and a user-friendly interface. Built using TypesScript, JavaScript, PHP, CSS ans React for dynamic and scalable solution.",
+    description: "A food delivery platform that simplifies the ordering process with real-time delivery tracking and a user-friendly interface. Built using TypeScript, JavaScript, PHP, CSS and React for dynamic and scalable solution.",
     tags: ["HTML", "CSS", "JavaScript", "TypeScript", "PHP", "React JS"],
     imageUrl: "/img/MealsOnWheels.png",
-    demoUrl: "#",
-    repoUrl: "#",
+    demoUrl: "https://github.com/D34TH-SE/meals-on-wheels",
+    repoUrl: "https://github.com/D34TH-SE/meals-on-wheels",
   },
 ];
-
-export const SYSTEM_INSTRUCTION = `
-  You are an AI assistant for ${PORTFOLIO_OWNER}'s portfolio website.
-  Your goal is to answer questions about ${PORTFOLIO_OWNER} based on the following information:
-  
-  Name: ${PORTFOLIO_OWNER}
-  Title: ${JOB_TITLE}
-  Bio: ${LONG_BIO}
-  Skills: ${JSON.stringify(SKILLS)}
-  Education: ${JSON.stringify(EDUCATION)}
-  Projects: ${JSON.stringify(PROJECTS.map(p => p.title + ": " + p.description))}
-  
-  Be professional, concise, and friendly. 
-  If asked about contact info, suggest using the contact form on the website.
-  Do not hallucinate information not present here.
-`;

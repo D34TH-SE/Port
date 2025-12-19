@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
 
       <div className="max-w-4xl mx-auto px-4 text-center z-10 relative">
         <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-medium animate-fade-in-up">
-          Available for freelance projects
+          Seeking Machine Learning Engineer Opportunities
         </div>
         
         <h1 className="text-5xl sm:text-7xl font-bold text-slate-100 mb-6 tracking-tight leading-tight min-h-[1.2em]">

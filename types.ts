@@ -1,3 +1,4 @@
+
 export interface Project {
   id: number;
   title: string;
@@ -30,6 +31,7 @@ export interface SocialLink {
   icon: string; 
 }
 
+// Added ChatMessage interface to store chat history and roles
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
