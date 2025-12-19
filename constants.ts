@@ -1,23 +1,30 @@
+import { Project, SkillCategory, Education } from './types';
 
-import { Project, SkillCategory, Education, SocialLink } from './types';
+// Mock imports for local images - You would place your actual images in an /assets or /img folder
+// When deploying to Vercel/Netlify, this ensures the build tool processes them correctly.
+// Note: In your local environment, ensure these files exist or update the paths.
+const DobuImg = { src: '/img/Dobu.png' }; 
+const EnomyImg = { src: '/img/Enomy.png' };
+const JumpstartImg = { src: '/img/Jumpstart.png' };
+const MealsImg = { src: '/img/MealsOnWheels.png' };
 
 export const PORTFOLIO_OWNER = "Eduardo Solano";
-export const JOB_TITLE = "Aspiring Machine Learning Engineer";
-export const SHORT_BIO = "Passionate developer eager to contribute to innovative projects and grow within a professional development team";
-export const LONG_BIO = `I am a motivated and detail-oriented developer who enjoys solving problems and bringing ideas to life through technology. My interests lie in both frontend and backend development, where I can combine creativity with logic to build meaningful applications.
+export const JOB_TITLE = "Aspiring Software Engineer & Job Candidate";
+export const SHORT_BIO = "Currently seeking entry-level opportunities where I can apply my growing technical skill set and contribute to team-driven success.";
+export const LONG_BIO = `I am a dedicated student and aspiring software engineer currently looking for my first professional role in the tech industry. My goal is to find a position where I can bridge the gap between my academic learning and real-world application.
 
-My journey in technology began with a curiosity for how digital systems work, which gradually evolved into a commitment to pursue software engineering. Over time, I have gained experience in designing websites, coding applications, and learning the principles of modern development.
+I am actively pursuing a Bachelor of Science in Information Technology at the University of Cebu and an Applied Degree in Software Engineering through Lithan Academy. This dual-focus education provides me with a strong theoretical foundation and practical coding experience.
 
-Looking ahead, I aim to grow as a professional by embracing challenges, improving my technical skills, and contributing solutions that make a real difference for users and businesses alike.`;
+I am a highly motivated individual, characterized by a "can-do" attitude and a commitment to continuous learning. I am looking for a company that values growth, mentorship, and innovative thinking.`;
 
-// Added SYSTEM_INSTRUCTION for Gemini Chat Assistant
 export const SYSTEM_INSTRUCTION = `You are a helpful and professional AI assistant for Eduardo Solano's professional portfolio. 
-Eduardo is a Software Engineer who specializes in building accessible, pixel-perfect, and performant web experiences.
-He is currently studying Bachelor of Science in Information Technology at University of Cebu - Banilad Campus and an Applied Degree in Software Engineering at Lithan Academy Singapore.
-His technical skills include HTML, CSS, JavaScript, Java, Python, MySQL, PHP, and various machine learning frameworks like TensorFlow and PyTorch.
-He has worked on projects like Dobu Martial Arts, Enomy Finance, Jumpstart, and Meals on Wheels.
-Answer questions about his skills, education, and projects based on the information provided in this portfolio. 
-Be concise, friendly, and helpful. If you don't know something, suggest the user contact Eduardo directly via the contact form.`;
+Eduardo is a highly motivated Job Candidate and Aspiring Software Engineer.
+He is currently seeking opportunities to start his professional career.
+He is studying at University of Cebu - Banilad Campus and Lithan Academy Singapore.
+His technical skills include HTML, CSS, JavaScript, Java, Python, and Machine Learning.
+He has developed several academic and personal projects including Dobu Martial Arts, Enomy Finance, and Jumpstart.
+Answer questions specifically about his background, education, and his eagerness to join a professional team.
+Suggest the user check his 'Contact' section if they want to discuss a job opening or interview.`;
 
 export const SKILLS: SkillCategory[] = [
   {
@@ -46,8 +53,8 @@ export const SKILLS: SkillCategory[] = [
   {
     category: "Soft Skills",
     skills: [
-      "Communication", "Teamwork", "Problem Solving", "Adaptability", 
-      "Time Management", "Creativity", "Critical Thinking"
+      "Effective Communication", "Collaborative Teamwork", "Analytical Problem Solving", "Rapid Adaptability", 
+      "Disciplined Time Management", "Creative Thinking", "Critical Evaluation"
     ],
   },
 ];
@@ -69,36 +76,36 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Dobu Martial Arts",
-    description: "A modern website for a martial arts academy, focused on showcasing training programs, instructors and membership details in a clean and professional layout. Built with HTML, CSS and JavaScript to ensure responsiveness and interactivity and usability.",
+    description: "A responsive martial arts academy website showcasing membership plans and training schedules. This project highlights my ability to create user-centric frontend designs.",
     tags: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "/img/Dobu.png",
+    imageUrl: DobuImg.src,
     demoUrl: "https://d34th-se.github.io/DobuMartialArts/",
     repoUrl: "https://github.com/D34TH-SE/DobuMartialArts",
   },
   {
     id: 2,
     title: "Enomy Finance",
-    description: "A finance management system that allows user to track expenses, set budgets and manage accounts securely. It also provides currency conversion via API, Investment planning tools and calculators for estimating returns. Developed using Java, Spring MVC and MySQL.",
-    tags: ["HTML", "CSS", "JavaScript", "Java", "Spring MVC", "MySQL"],
-    imageUrl: "/img/Enomy.png",
+    description: "A full-stack finance application featuring multi-currency conversion and investment calculators. Built during my studies to master backend logic and database management.",
+    tags: ["Java", "Spring MVC", "MySQL"],
+    imageUrl: EnomyImg.src,
     demoUrl: "https://github.com/D34TH-SE/Enomy",
     repoUrl: "https://github.com/D34TH-SE/Enomy",
   },
   {
     id: 3,
     title: "Jumpstart",
-    description: "An e-commerce fashion retail platform built in Jumpstart, featuring a responsive shopping experience, brand identity design and an integrated AI-powered chatbot for customer support. Technologies used include HTML, CSS and JavaScript.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "/img/Jumpstart.png",
+    description: "An e-commerce prototype for fashion retail that incorporates an AI chatbot for customer assistance, demonstrating my interest in integrating AI into web applications.",
+    tags: ["HTML", "CSS", "JavaScript", "AI Integration"],
+    imageUrl: JumpstartImg.src,
     demoUrl: "https://github.com/D34TH-SE/CPL-Project",
     repoUrl: "https://github.com/D34TH-SE/CPL-Project",
   },
   {
     id: 4,
     title: "Meals on Wheels",
-    description: "A food delivery platform that simplifies the ordering process with real-time delivery tracking and a user-friendly interface. Built using TypeScript, JavaScript, PHP, CSS and React for dynamic and scalable solution.",
-    tags: ["HTML", "CSS", "JavaScript", "TypeScript", "PHP", "React JS"],
-    imageUrl: "/img/MealsOnWheels.png",
+    description: "A dynamic food delivery platform created with React and PHP. It features a scalable architecture and a responsive UI designed for real-time interaction.",
+    tags: ["React JS", "TypeScript", "PHP", "Tailwind CSS"],
+    imageUrl: MealsImg.src,
     demoUrl: "https://github.com/D34TH-SE/meals-on-wheels",
     repoUrl: "https://github.com/D34TH-SE/meals-on-wheels",
   },
